@@ -59,7 +59,7 @@ module.exports = {
     // This does not produce a real file. It's just the virtual path that is
     // served by WebpackDevServer in development. This is the JS bundle
     // containing code from all our entry points, and the Webpack runtime.
-    filename: 'static/js/bundle.js',
+    filename: 'static/js/[name].bundle.js',
     // There are also additional JS chunk files if you use code splitting.
     chunkFilename: 'static/js/[name].chunk.js',
     // This is the URL that app is served from. We use "/" in development.
@@ -266,7 +266,7 @@ module.exports = {
     }),
     new webpack.DefinePlugin({ // <-- 减少 React 大小的关键
         'process.env': {
-            'NODE_ENV': JSON.stringify('production')
+            'NODE_ENV': JSON.stringify('development')
         }
     }),
     new webpack.optimize.DedupePlugin(), //删除类似的重复代码
